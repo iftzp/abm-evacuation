@@ -86,4 +86,4 @@ Again, we can see the effect of having 1 exit impeding the agents from evacuatin
 #### 6. 5 storeys, 4 exits, 4 stairwells
 ![alt text](experiments/experiment-6.png)
 
-The stairwells are impeding the agents heavily again with 1 stairwell, but we can see that the ground floor marked in purple has a relatively consistent number of agents, even though there are agents leaving higher floors. This shows the effect of having more doorways on the building as the agents can evacuate faster.
+The stairwells are impeding the agents heavily again with 1 stairwell, but we can see that the ground floor marked in purple has a relatively consistent number of agents, even though there are agents leaving higher floors. This shows the effect of having more doorways on the building as the agents can evacuate faster. In the second exit comparing the effect of stairwells, agents manage to clear the building within 116 time steps.
