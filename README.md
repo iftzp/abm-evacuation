@@ -3,9 +3,11 @@
 ## Agent Based Model - Evacuation behaviour from a building under panic
 
 This repository contains code which has been made to simulate evacuation behaviour of individuals from a building under panic.
-The code makes use of the agent based simulator, [PyCX](https://github.com/hsayama/PyCX), as a basis for the model.
+The code makes use of the agent based simulator, [PyCX](https://github.com/hsayama/PyCX), as a basis for the model.  
 
-![alt text](extra/model-preview.png)
+The purpose of the model is to simulate evacuation of humans from a building with low visibility, allowing the user to adjust multiple parameters and see how this effects how quickly the humans can evacuate from the building.  
+
+![alt text](experiments/model-preview.png)
 
 #### Environment
 The environment of the model is a rectangular building, where the following parameters can be adjusted:
@@ -58,3 +60,21 @@ Agents move randomly within the bounds of the building. Agents cannot move into/
 <b> Agents on a higher floor </b> will move randomly, looking for stairwells. When an agent moves into a stairwell, they will be re initialised on a lower floor and will have to continue looking for stairwells until they are on the ground floor.  
 
 By moving randomly within the building, Agent behaviour simulates that of humans within a building with low visibility, such as a burning building with lots of smoke.  
+
+
+### Experiments
+
+To test how the model performs under different conditions, the following experiments have been carried out with <b>25 agents</b> until <b>time step 200</b>, with results also shown.  
+
+1. 1 Storey, 1 exit  
+![alt text](experiments/experiment-1.png)
+2. 1 storey, 4 exits
+![alt text](experiments/experiment-2.png)
+3. 5 storeys, 1 exit, 1 stairwell
+![alt text](experiments/experiment-3.png)
+4. 5 storeys, 1 exit, 4 stairwells
+![alt text](experiments/experiment-4.png)
+5. 5 storeys, 4 exits, 1 stairwell
+![alt text](experiments/experiment-5.png)
+6. 5 storeys, 4 exits, 4 stairwells
+![alt text](experiments/experiment-6.png)

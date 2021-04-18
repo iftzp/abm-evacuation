@@ -102,6 +102,7 @@ def initialize():
     # row_padding = round(len(building_row_values) * stairwell_ratio_size)
     # column_padding = round(len(building_column_values) * stairwell_ratio_size)
 
+    # mark in stairwells
     stairwells = {
         0: {'start': [min(building_row_values), min(building_column_values)], 'end': [min(building_row_values)+row_padding, min(building_column_values)+column_padding]},
         1: {'start': [max(building_row_values)-row_padding+1, max(building_column_values)-column_padding+1], 'end': [max(building_row_values)+1, max(building_column_values)+1]},
@@ -118,6 +119,7 @@ def initialize():
             for column_value in range(start_column, end_column):
                 layout[row_value, column_value] = stairwell_label
 
+    # agents are initialised on a random floor, and are placed in an area of the building which is not a stairwell
     agents = []
     safe_output = [0]
     floor_output = {}
@@ -163,7 +165,6 @@ def observe():
         plot(x, floor_output[key], label=f'Floor {key}')
     legend()
     title('Individuals on each floor of building @ t = ' + str(x[-1]))
-    plt.savefig('display.png')
 
 def clip(a, amin, amax):
     if a < amin: return amin
@@ -359,7 +360,7 @@ def set_wall_padding(val = wall_padding_size):
     Padding around door. Smaller value is a bigger doorway. Best not to adjust.
     '''
     global wall_padding_size
-    wall_padding_size = int(val)
+    wall_padding_size = float(val)
     return val
 
 def set_stairwell_ratio(val = stairwell_ratio_size):
@@ -367,7 +368,7 @@ def set_stairwell_ratio(val = stairwell_ratio_size):
     Ratio of stairwell to rest of building. Bigger value is a bigger stairwell. Best not to adjust.
     '''
     global stairwell_ratio_size
-    stairwell_ratio_size = int(val)
+    stairwell_ratio_size = float(val)
     return val
 
-pycxsimulator.GUI(parameterSetters=[set_population_size, set_building_width, set_building_height, set_building_storeys, set_building_stairwells, set_building_exits, set_distance_to_safezone]).start(func=[initialize, observe, update])
+pycxsimulator.GUI(parameterSetters=[set_population_size, set_building_width, set_building_height, set_building_storeys, set_building_stairwells, set_building_exits, set_distance_to_safezone, set_wall_padding, set_stairwell_ratio]).start(func=[initialize, observe, update])
