@@ -9,7 +9,7 @@ The purpose of the model is to simulate evacuation of humans from a building wit
 
 ![alt text](experiments/model-preview.png)
 
-#### Environment
+### Environment
 The environment of the model is a rectangular building, where the following parameters can be adjusted:
 1. Building height and width
 2. Number of stairwells in building
@@ -24,7 +24,7 @@ The exits are contained in the walls of the building as purple sections of the w
 The stairwells are in the corners of the building and are represented as orange squares.  
 The green area of the environment is the safezone, where agents gather after evacuating from the building.  
 
-#### Agents
+### Agents
 In the case of this model, humans are represented as agents who are shown as blue circles.  
 While in the building, agents use Moore neighbourhoods with assigned boundary conditions as the transition rule.  
 Agents move towards exits and stairwells if they fall within their neighbourhood.  
@@ -66,15 +66,24 @@ By moving randomly within the building, Agent behaviour simulates that of humans
 
 To test how the model performs under different conditions, the following experiments have been carried out with <b>25 agents</b> until <b>time step 200</b>, with results also shown.  
 
-1. 1 Storey, 1 exit  
+#### 1. 1 Storey, 1 exit  
 ![alt text](experiments/experiment-1.png)
-2. 1 storey, 4 exits
+#### 2. 1 storey, 4 exits
 ![alt text](experiments/experiment-2.png)
-3. 5 storeys, 1 exit, 1 stairwell
+
+From the first two experiments, we can see the effect of having more doors on the building.  
+The agents failed to evacuate the building in 200 time steps with 1 doorway, however when tested with 4 exits, all agents managed to evacuate the building in 80 time steps.
+
+#### 3. 5 storeys, 1 exit, 1 stairwell
 ![alt text](experiments/experiment-3.png)
-4. 5 storeys, 1 exit, 4 stairwells
+#### 4. 5 storeys, 1 exit, 4 stairwells
 ![alt text](experiments/experiment-4.png)
-5. 5 storeys, 4 exits, 1 stairwell
+
+Again, we can see the effect of having 1 exit impeding the agents from evacuating. However, notice how when the number of stairwells is set to 4, agents manage to get to the ground floor within the first 30 time steps.
+
+#### 5. 5 storeys, 4 exits, 1 stairwell
 ![alt text](experiments/experiment-5.png)
-6. 5 storeys, 4 exits, 4 stairwells
+#### 6. 5 storeys, 4 exits, 4 stairwells
 ![alt text](experiments/experiment-6.png)
+
+The stairwells are impeding the agents heavily again with 1 stairwell, but we can see that the ground floor marked in purple has a relatively consistent number of agents, even though there are agents leaving higher floors. This shows the effect of having more doorways on the building as the agents can evacuate faster.
