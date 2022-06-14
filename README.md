@@ -1,6 +1,4 @@
-# CA4024 - Continuous Assessment 2
-
-## Agent Based Model - Evacuation behaviour from a building under panic
+# Agent Based Model - Evacuation behaviour from a building under panic
 
 This repository contains code which has been made to simulate evacuation behaviour of individuals from a building under panic.
 The code makes use of the agent based simulator, [PyCX](https://github.com/hsayama/PyCX), as a basis for the model.  
@@ -34,8 +32,8 @@ Agents cannot leave the building without being on the ground floor and leaving t
 
 To run the model:
 
-> git clone  
-> cd ca4024-continuous-assessment-2  
+> git clone https://github.com/iftzp/abm-evacuation.git  
+> cd abm-evacuation  
 > python3 abm-building-panic.py  
 
 #### GUI
