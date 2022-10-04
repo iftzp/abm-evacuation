@@ -1,5 +1,7 @@
 # Agent Based Model - Evacuation behaviour from a building under panic
 
+I worked on this project during my final year in university. I achieved a grade of 82% in this assignment.
+
 This repository contains code which has been made to simulate evacuation behaviour of individuals from a building under panic.
 The code makes use of the agent based simulator, [PyCX](https://github.com/hsayama/PyCX), as a basis for the model.  
 
